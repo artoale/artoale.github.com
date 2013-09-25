@@ -16,12 +16,15 @@ h1, h2, h3, h4, h5, h6, h7 {
 }
 .box {
     -webkit-transition: all .2s ease;
-    background-color: #3c3c3c;
+    background-color: #676767;
     color: #e5e5e5;
     box-shadow: 0 0 10px 0 #7b7b7b;
 }
 .big {
     padding: 20px;
+    background-color:#ffd800;
+    color: #3c3c3c;
+    border-top: solid 10px #3c3c3c;
 }
 .article {
     background-color: white;
@@ -31,10 +34,15 @@ h1, h2, h3, h4, h5, h6, h7 {
 }
 img {
     border-radius:100%;
+    border: solid 3px #fff5bb;
 }
 .links {
     margin-top:25px;
 }
+.links a, .links  a:hover {
+    text-decoration:none;
+}
+
 .links .box {
     /*    color: #dedede;*/
     height: 113px;
