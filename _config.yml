@@ -1,0 +1,5 @@
+name: Bla Bla
+markdown: redcarpet
+pygments: true
+exclude: ['sass']
+source: build
