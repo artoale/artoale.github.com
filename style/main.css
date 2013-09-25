@@ -8,13 +8,8 @@ body, html {
 h1, h2, h3, h4, h5, h6, h7 {
     font-family:'Ubuntu', sans-serif;
 }
-@media (min-width: 992px) {
-    .container {
-        position: relative;
-        top:50%;
-        height: 470px;
-        margin-top:-235px;
-    }
+.name {
+    font-size: 2em;
 }
 .visible-xs img {
     margin:0 20px;
@@ -30,7 +25,7 @@ h1, h2, h3, h4, h5, h6, h7 {
 }
 .article {
     background-color: white;
-    font-size:1.1em;
+    color: #525252;
     padding: 20px;
     box-shadow: 0 1px 4px 0 gray;
 }
@@ -38,13 +33,13 @@ img {
     border-radius:100%;
 }
 .links {
-    margin-top:30px;
+    margin-top:25px;
 }
 .links .box {
     /*    color: #dedede;*/
-    height: 213px;
+    height: 113px;
     text-align:center;
-    line-height: 213px;
+    line-height: 113px;
     font-size: 4em;
     margin-bottom: 10px;
     border-bottom: solid 10px #3c3c3c;
@@ -58,9 +53,32 @@ img {
 }
 #stream:hover {
     border-bottom: solid 10px #00880b;
+    margin-bottom: 0;
 }
 .links .box:hover {
     cursor:pointer;
     background-color:#3c3c3c;
     border-bottom: solid 10px #fdd600;
+}
+@media (min-width: 992px) {
+    .name {
+        font-size: 5em;
+        text-align:ce
+    }
+    .article {
+        font-size:1.8em;
+    }
+    .nick {
+        font-size: 1.6em;
+    }
+    .container {
+        position: relative;
+        top:50%;
+        height: 470px;
+        margin-top:-235px;
+    }
+    .links .box {
+        height: 213px;
+        line-height: 213px;
+    }
 }
