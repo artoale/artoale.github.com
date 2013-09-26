@@ -1,5 +1,6 @@
 --- 
-layout: default 
+layout: default
+title: Articles on javascript, open source and stuff
 ---
 <section>
     <ul class="list-unstyled row">
@@ -7,13 +8,20 @@ layout: default
 <!--        <a href="{{ post.url }}">-->
             <li class="col-md-4 col-lg-3">
                 <div class="box">
-                    {% if post.img %}
-                    <img src="{{ post.img }}" />
-                    {% endif %}
-                    
-                    {{ post.title }}
-                    <!--                <p>{{ post.excerpt }}</p>-->
+                    <div>
+                        {% if post.img %}
+                        <img src="{{ post.img }}" />
+                        {% endif %}
+                        
+                        <div class="title">{{ post.title }} <time>({{post.date | date_to_string }})</time></div>
+                        <div class="excerpt"><p>{{ post.excerpt }}</div>
+                    </div>
                 </div>
+                <a href="{{post.url}}">
+                    <footer>
+                        Read the full article <span class="glyphicon glyphicon-play-circle pull-right"></span>
+                    </footer>
+                </a>
             </li>
 <!--        </a>-->
         {% endfor %}

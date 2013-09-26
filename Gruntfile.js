@@ -54,6 +54,7 @@ module.exports = function (grunt) {
             livereload: {
                 options: {
                     port: 5000,
+                    hostname : '*',
                     base: ['.tmp', '.tmp_style', 'static']
                 }
             },
