@@ -1,0 +1,26 @@
+/* line 4, ../sass/main.scss */
+body, html {
+  height: 100%;
+  font-family: "Ubuntu", sans-serif;
+  background-color: #f0f0f0;
+  color: #3c3c3c;
+}
+
+/* line 11, ../sass/main.scss */
+.big {
+  padding: 20px;
+  font-size: 1.3em;
+  background-color: #ffd800;
+  border-top: solid 10px #3c3c3c;
+  margin-bottom: 30px;
+}
+
+/* line 20, ../sass/main.scss */
+div.box {
+  height: 2.8em;
+  font-size: 1.4em;
+  overflow: hidden;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #e2e2e2;
+}

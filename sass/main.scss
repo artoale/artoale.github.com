@@ -1,0 +1,31 @@
+@import 'variables';
+
+
+body, html {
+    height: 100%;
+    font-family:$fontFamily;
+    background-color:$bgColor;
+    color: $textColor;
+}
+
+.big {
+    padding: 20px;
+    font-size: 1.3em;
+    background-color:$mainColor;
+    
+    border-top: solid 10px $borderColor;
+    margin-bottom: 30px;
+}
+
+div.box {
+//    color: $textColorLight;
+    height: 2.8em;
+//    text-align:center;
+//    line-height: 113px;
+    font-size: 1.4em;
+    overflow:hidden;
+    padding:10px;
+    margin-bottom: 10px;
+//    border-bottom: solid 10px $borderColor;
+    background-color: $textColorLight;
+}

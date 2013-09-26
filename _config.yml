@@ -1,5 +1,5 @@
 name: Bla Bla
 markdown: redcarpet
 pygments: true
-exclude: ['sass']
-source: build
+exclude: ['sass', 'static', 'node_modules', 'Gruntfile', 'package.json']
+source: .

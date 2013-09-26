@@ -1,0 +1,21 @@
+
+//COLORS
+$bgColor: rgb(240, 240, 240);
+
+$mainColor: #ffd800;
+$sideColorA: #d80000;
+$sideColorB: #00880b;
+
+$textColor: #3c3c3c;
+$textColorLight: lighten($textColor, 65%);
+
+$borderColor: $textColor;
+$boxColor: lighten($borderColor, 25%);
+
+//SIZE
+$maxTabletWidth: 992px;
+
+
+//Tipography
+
+ $fontFamily: 'Ubuntu', sans-serif;

@@ -1,0 +1,128 @@
+/* line 5, ../sass/landing.scss */
+body, html {
+  height: 100%;
+  font-family: "Ubuntu", sans-serif;
+  background-color: #f0f0f0;
+}
+
+/* line 11, ../sass/landing.scss */
+.name {
+  font-size: 2em;
+}
+
+/* line 15, ../sass/landing.scss */
+.visible-xs img {
+  margin: 0 20px;
+}
+
+/* line 19, ../sass/landing.scss */
+.box {
+  -webkit-transition: all .2s ease;
+  color: #e2e2e2;
+}
+
+/* line 24, ../sass/landing.scss */
+.big {
+  padding: 20px;
+  background-color: #ffd800;
+  color: #3c3c3c;
+  border-top: solid 10px #3c3c3c;
+}
+
+/* line 31, ../sass/landing.scss */
+.article {
+  background-color: white;
+  color: #3c3c3c;
+  padding: 20px;
+}
+
+/* line 37, ../sass/landing.scss */
+img {
+  border-radius: 100%;
+}
+
+/* line 42, ../sass/landing.scss */
+.links {
+  margin-top: 25px;
+}
+
+/* line 46, ../sass/landing.scss */
+.links a, .links a:hover {
+  text-decoration: none;
+}
+
+/* line 50, ../sass/landing.scss */
+.links .box {
+  /*    color: #dedede;*/
+  height: 113px;
+  text-align: center;
+  line-height: 113px;
+  font-size: 4em;
+  margin-bottom: 10px;
+  border-bottom: solid 10px #3c3c3c;
+  background-color: #7c7c7c;
+}
+
+/* line 61, ../sass/landing.scss */
+#stream {
+  margin-bottom: 0;
+}
+
+/* line 65, ../sass/landing.scss */
+#blog:hover, a:focus #blog {
+  border-bottom: solid 10px #ffd800;
+}
+
+/* line 69, ../sass/landing.scss */
+#code:hover, a:focus #code {
+  border-bottom: solid 10px #d80000;
+}
+
+/* line 73, ../sass/landing.scss */
+#stream:hover, a:focus #stream {
+  border-bottom: solid 10px #00880b;
+}
+
+/* line 77, ../sass/landing.scss */
+.links a:focus {
+  outline: 0;
+}
+
+/* line 81, ../sass/landing.scss */
+.links .box:hover, .links .box:focus, .links a:focus .box {
+  cursor: pointer;
+  background-color: #3c3c3c;
+  outline: 0;
+}
+
+@media (min-width: 992px) {
+  /* line 88, ../sass/landing.scss */
+  .name {
+    font-size: 5em;
+    text-align: ce;
+  }
+
+  /* line 92, ../sass/landing.scss */
+  .article {
+    font-size: 1.8em;
+  }
+
+  /* line 95, ../sass/landing.scss */
+  .nick {
+    font-size: 1.6em;
+  }
+
+  /* line 98, ../sass/landing.scss */
+  .container {
+    position: relative;
+    top: 50%;
+    height: 524px;
+    margin-top: -267px;
+  }
+
+  /* line 104, ../sass/landing.scss */
+  .links .box {
+    height: 213px;
+    line-height: 213px;
+  }
+}

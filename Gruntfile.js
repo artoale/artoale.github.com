@@ -14,35 +14,36 @@ module.exports = function (grunt) {
                 livereload: true
             },
             compass: {
-                files: ['app/sass/*.{sass,scss}'],
+                files: ['sass/*.{sass,scss}'],
                 tasks: ['compass:dev']
             },
             jekyll: {
-                files: ['app/**.{html,md}'],
+                files: ['**/*.{html,md,markdown}'],
                 tasks: ['jekyll:dev']
             }
         },
         compass: {
             build: {
                 options: {
-                    sassDir: 'build/sass',
-                    cssDir: 'build/css',
+                    sassDir: 'sass',
+                    cssDir: 'css',
                     force: true //                   raw: 'preferred_syntax = :sass\n' // Use `raw` since it's not directly available
                 }
             },
             dev: {
                 options: {
-                    sassDir: 'app/sass',
-                    cssDir: '.tmp_style/css'
+                    sassDir: 'sass',
+                    cssDir: '.tmp_style/css',
+                    force: true
                 }
             }
         },
         jekyll: {
             dev: {
                 options: {
-                    src: 'app',
+                    src: '.',
                     dest: '.tmp',
-                    raw: "exclude: ['sass']\n"
+                    raw: ["exclude: ['sass']", 'markdown: redcarpet', 'pygments: true'].join('\n')
                 }
             },
             build: {
@@ -53,7 +54,7 @@ module.exports = function (grunt) {
             livereload: {
                 options: {
                     port: 5000,
-                    base: ['.tmp', '.tmp_style']
+                    base: ['.tmp', '.tmp_style', 'static']
                 }
             },
             build: {
@@ -66,16 +67,16 @@ module.exports = function (grunt) {
         },
         clean: {
             dev: ['.tmp', '.tmp_style'],
-            build: ['_site', 'build']
+            build: ['css', 'font', 'img']
         },
         copy: {
             build: {
                 files: [
                     {
                         expand: true,
-                        cwd: 'app/',
+                        cwd: 'static/',
                         src: ['**'],
-                        dest: 'build/'
+                        dest: './'
                     }
                 ]
             }
@@ -91,13 +92,13 @@ module.exports = function (grunt) {
         'connect:livereload',
         'watch'
     ]);
-    
+
     grunt.registerTask('build', [
         'clean:build',
         'copy:build',
         'compass:build'
     ]);
-    
+
     grunt.registerTask('all', [
         'build',
         'jekyll:build',
