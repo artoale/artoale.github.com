@@ -68,7 +68,7 @@ module.exports = function (grunt) {
         },
         clean: {
             dev: ['.tmp', '.tmp_style'],
-            build: ['css', 'font', 'img']
+            build: ['css', 'fonts', 'img']
         },
         copy: {
             build: {

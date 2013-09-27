@@ -2,7 +2,7 @@
 layout: default
 title: Articles on javascript, open source and stuff
 ---
-<section>
+<div>
     <ul class="list-unstyled row">
         {% for post in site.posts %}
 <!--        <a href="{{ post.url }}">-->
@@ -13,7 +13,7 @@ title: Articles on javascript, open source and stuff
                         <img src="{{ post.img }}" />
                         {% endif %}
                         
-                        <div class="title">{{ post.title }} <time>({{post.date | date_to_string }})</time></div>
+                        <div class="title">{{ post.title }} <time> {{post.date | date_to_string }}</time></div>
                         <div class="excerpt"><p>{{ post.excerpt }}</div>
                     </div>
                 </div>
@@ -26,4 +26,4 @@ title: Articles on javascript, open source and stuff
 <!--        </a>-->
         {% endfor %}
         </ul>
-</section>
+</div>

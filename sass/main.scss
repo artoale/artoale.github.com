@@ -13,7 +13,12 @@ body, html {
         font-size: 1.3em;
         background-color:$mainColor;
         border-top: solid 5px $borderColor;
+        h1 {
+            padding:0;
+            font-size:1.3em;
+        }
     }
+    
     .subtitle {
         background-color: white;    
         padding: 10px 20px;
@@ -46,7 +51,7 @@ div.box {
     }
     
     time {
-        display: inline;
+        display: inline-block;
         font-size: 0.7em;
         font-style:italic;
     }
@@ -100,3 +105,5 @@ div.box {
     }
 
 }
+
+@import '_post';
