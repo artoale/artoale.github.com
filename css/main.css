@@ -22,18 +22,29 @@ body, html {
   padding: 0;
   font-size: 1.3em;
 }
-/* line 22, ../sass/main.scss */
+/* line 20, ../sass/main.scss */
+.container header .big img {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  border-radius: 100%;
+}
+/* line 28, ../sass/main.scss */
 .container header .subtitle {
   background-color: white;
   padding: 10px 20px;
 }
 
-/* line 30, ../sass/main.scss */
-a, a:hover {
+/* line 36, ../sass/main.scss */
+ul a, ul a:hover {
   text-decoration: none;
 }
 
-/* line 33, ../sass/main.scss */
+/* line 40, ../sass/main.scss */
 footer {
   font-size: 1.4em;
   margin-bottom: 10px;
@@ -42,34 +53,40 @@ footer {
   padding: 5px 10px;
 }
 
-/* line 42, ../sass/main.scss */
+/* line 49, ../sass/main.scss */
 div.box {
   padding: 10px;
   background-color: #e2e2e2;
 }
-/* line 48, ../sass/main.scss */
+/* line 55, ../sass/main.scss */
 div.box .title {
   font-size: 1.4em;
 }
-/* line 53, ../sass/main.scss */
+/* line 60, ../sass/main.scss */
 div.box time {
   display: inline-block;
   font-size: 0.7em;
   font-style: italic;
 }
-/* line 59, ../sass/main.scss */
+/* line 66, ../sass/main.scss */
 div.box .excerpt {
   text-overflow: ellipsis;
 }
 
+@media (max-width: 767px) {
+  /* line 73, ../sass/main.scss */
+  .container {
+    padding: 0;
+  }
+}
 @media (min-width: 992px) {
-  /* line 66, ../sass/main.scss */
+  /* line 78, ../sass/main.scss */
   footer {
     font-size: 1em;
     margin-bottom: 0;
   }
 
-  /* line 70, ../sass/main.scss */
+  /* line 82, ../sass/main.scss */
   .box {
     height: 200px;
     line-height: 25px;
@@ -77,7 +94,7 @@ div.box .excerpt {
     overflow: hidden;
   }
 
-  /* line 76, ../sass/main.scss */
+  /* line 88, ../sass/main.scss */
   .box:before {
     content: "";
     float: left;
@@ -85,14 +102,14 @@ div.box .excerpt {
     height: 200px;
   }
 
-  /* line 83, ../sass/main.scss */
+  /* line 95, ../sass/main.scss */
   .box > *:first-child {
     float: right;
     width: 100%;
     margin-left: -5px;
   }
 
-  /* line 89, ../sass/main.scss */
+  /* line 101, ../sass/main.scss */
   .box:after {
     content: "\02026";
     float: right;
@@ -117,6 +134,21 @@ div.box .excerpt {
 }
 /* line 1, ../sass/_post.scss */
 article.post {
-  background-color: white;
+  background-color: #3c3c3c;
+  color: #e2e2e2;
   padding: 20px;
+}
+/* line 7, ../sass/_post.scss */
+article.post header h1 {
+  border-bottom: solid 2px #565656;
+}
+/* line 12, ../sass/_post.scss */
+article.post time {
+  font-style: italic;
+}
+/* line 19, ../sass/_post.scss */
+article.post #disqus_thread {
+  padding-top: 10px;
+  margin-top: 30px;
+  border-top: solid 2px #565656;
 }

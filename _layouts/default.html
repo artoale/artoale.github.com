@@ -5,8 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css' />
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
+        <!-- RDFa for Search Engine Optimization -->
+        <link rel="author" href="https://plus.google.com/117495923729339939592/">
+        <link rel="publisher" href="https://plus.google.com/117495923729339939592/">
+        
+        
         <!-- Optional theme -->
-<!--        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css" />-->
+        <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css" />-->
         <link href="/css/fontello.css" rel="stylesheet" />
         <!-- syntax highlighting CSS -->
         <link rel="stylesheet" href="/css/syntax.css">
@@ -16,20 +21,23 @@
     </head>
     
     <body>
-        <div class="container">
+        <div class="container" itemscope itemtype="http://schema.org/Article">
             <header class="row">
                 <div class=" col-xs-12">
-                    <div class="big"><h1>Alessandro Artoni 
-                            <span class="nick">@artoale</span></h1>
+                    <div class="big">
+                        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                            <h1>
+                                <span itemprop="name">Alessandro Artoni</span>
+                                <meta itemprop="url" content="http://artoale.com" />
+                                <span itemprop="additionalName" class="nick">@artoale</span>
+                            </h1>
+                            <img itemprop="image" height="70px" class="hidden-xs pull-right" src="/img/me.jpg" />
+                        </span>
                     </div>
                     <div class="subtitle">Articles on javascript, open source and stuff</div>
-                    
                 </div>
-
             </header>
-            <div>
-            {{ content }}
-            </div>
+            <div>{{ content }}</div>
         </div>
     </body>
 

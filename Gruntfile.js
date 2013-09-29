@@ -34,6 +34,8 @@ module.exports = function (grunt) {
                 options: {
                     sassDir: 'sass',
                     cssDir: '.tmp_style/css',
+//                    config: 'compass.rb',
+//                    raw: 'sass_options = {:sourcemap => true}',
                     force: true
                 }
             }
@@ -43,7 +45,7 @@ module.exports = function (grunt) {
                 options: {
                     src: '.',
                     dest: '.tmp',
-                    raw: ["exclude: ['sass']", 'markdown: redcarpet', 'pygments: true'].join('\n')
+                    raw: ['markdown: redcarpet', 'pygments: true'].join('\n')
                 }
             },
             build: {
