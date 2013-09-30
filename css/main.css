@@ -168,3 +168,7 @@ article.post #disqus_thread {
   margin-top: 30px;
   border-top: solid 2px #565656;
 }
+/* line 24, ../sass/_post.scss */
+article.post .social {
+  text-align: right;
+}
