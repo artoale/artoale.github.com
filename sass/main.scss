@@ -76,6 +76,14 @@ div.box {
     .container {
         padding: 0;
     }
+    .col-xs-12 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
 @media (min-width: $maxTabletWidth) {
     footer {

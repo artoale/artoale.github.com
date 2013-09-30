@@ -82,15 +82,27 @@ div.box .excerpt {
   .container {
     padding: 0;
   }
+
+  /* line 79, ../sass/main.scss */
+  .col-xs-12 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* line 83, ../sass/main.scss */
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 @media (min-width: 992px) {
-  /* line 81, ../sass/main.scss */
+  /* line 89, ../sass/main.scss */
   footer {
     font-size: 1em;
     margin-bottom: 0;
   }
 
-  /* line 85, ../sass/main.scss */
+  /* line 93, ../sass/main.scss */
   .box {
     height: 200px;
     line-height: 25px;
@@ -98,7 +110,7 @@ div.box .excerpt {
     overflow: hidden;
   }
 
-  /* line 91, ../sass/main.scss */
+  /* line 99, ../sass/main.scss */
   .box:before {
     content: "";
     float: left;
@@ -106,14 +118,14 @@ div.box .excerpt {
     height: 200px;
   }
 
-  /* line 98, ../sass/main.scss */
+  /* line 106, ../sass/main.scss */
   .box > *:first-child {
     float: right;
     width: 100%;
     margin-left: -5px;
   }
 
-  /* line 104, ../sass/main.scss */
+  /* line 112, ../sass/main.scss */
   .box:after {
     content: "\02026";
     float: right;
