@@ -154,6 +154,16 @@ div.box .excerpt {
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 0%, #e2e2e2 50%, #e2e2e2);
   }
 }
+/* line 137, ../sass/main.scss */
+code {
+  padding: 2px 4px;
+  font-size: 80%;
+  color: #e2e2e2;
+  background-color: #2f2f2f;
+  white-space: nowrap;
+  border-radius: 4px;
+}
+
 /* line 1, ../sass/_post.scss */
 article.post {
   background-color: #3c3c3c;
@@ -172,14 +182,15 @@ article.post time {
 article.post img {
   float: left;
   margin-right: 10px;
+  margin-bottom: 10px;
 }
-/* line 22, ../sass/_post.scss */
+/* line 23, ../sass/_post.scss */
 article.post #disqus_thread {
   padding-top: 10px;
   margin-top: 30px;
   border-top: solid 2px #565656;
 }
-/* line 27, ../sass/_post.scss */
+/* line 28, ../sass/_post.scss */
 article.post .social {
   text-align: right;
 }

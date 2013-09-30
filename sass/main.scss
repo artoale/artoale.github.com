@@ -134,4 +134,13 @@ div.box {
 
 }
 
+code {
+    padding: 2px 4px;
+    font-size: 80%;
+    color: $textColorLight;
+    background-color: #2f2f2f;
+    white-space: nowrap;
+    border-radius: 4px;
+} 
+
 @import '_post';

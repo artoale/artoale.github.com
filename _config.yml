@@ -1,7 +1,6 @@
 name: Bla Bla
+permalink: pretty 
 markdown: redcarpet
 pygments: true
 exclude: ['sass', 'static', 'node_modules', 'Gruntfile', 'package.json']
 source: .
-redcarpet:
-    with_toc_data: true
