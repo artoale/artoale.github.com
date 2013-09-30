@@ -5,6 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <meta property="og:description" 
   content="{{page.excerpt | strip_html }}" />
+         {% if page.img %}
+        <meta property="og:image" content="{{site.url}}/img/{{page.img}}" />
+        {% endif %}
         <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css' />
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
         <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAASElEQVQ4T2O0sbH5z0ABYBx4A/7fYKDMCzQxwDbFBmuwHp5zBEOcEd0FuDTDdKIbgtMAdIUwg4eQAbgSJ9FeoNiAIRyIpOZsAHXmWghLeTzQAAAAAElFTkSuQmCC" type="image/x-icon" />
