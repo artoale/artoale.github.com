@@ -15,7 +15,10 @@ article.post {
 //        background-color:white;
 //        display:block;
     }
-    
+    img {
+        float: left;
+        margin-right: 10px;        
+    }
     #disqus_thread {
         padding-top: 10px;
         margin-top: 30px;

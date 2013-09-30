@@ -9,11 +9,10 @@ title: Articles on javascript, open source and stuff
             <li class="col-md-4 col-lg-3">
                 <div class="box">
                     <div>
-                        {% if post.img %}
-                        <img src="{{ post.img }}" />
-                        {% endif %}
-                        
                         <div class="title">{{ post.title }} <time> {{post.date | date_to_string }}</time></div>
+                         {% if post.img %}
+                        <img src="/img/{{ post.img }}" />
+                        {% endif %}
                         <div class="excerpt"><p>{{ post.excerpt }}</div>
                     </div>
                 </div>

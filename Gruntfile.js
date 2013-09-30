@@ -45,7 +45,7 @@ module.exports = function (grunt) {
                 options: {
                     src: '.',
                     dest: '.tmp',
-                    raw: ['markdown: redcarpet', 'pygments: true'].join('\n')
+                    raw: ['markdown: redcarpet', 'pygments: true', 'redcarpet:', '    extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables",     "with_toc_data"]'].join('\n')
                 }
             },
             build: {

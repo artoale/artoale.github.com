@@ -7,6 +7,8 @@
   content="{{page.excerpt | strip_html }}" />
         <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css' />
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
+        <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAASElEQVQ4T2O0sbH5z0ABYBx4A/7fYKDMCzQxwDbFBmuwHp5zBEOcEd0FuDTDdKIbgtMAdIUwg4eQAbgSJ9FeoNiAIRyIpOZsAHXmWghLeTzQAAAAAElFTkSuQmCC" type="image/x-icon" />
+        
         <!-- RDFa for Search Engine Optimization -->
         <link rel="author" href="https://plus.google.com/117495923729339939592/">
         <link rel="publisher" href="https://plus.google.com/117495923729339939592/">
@@ -33,7 +35,7 @@
                                     <span itemprop="additionalName" class="nick">@artoale</span>
                                 </a>
                             </h1>
-                            <img itemprop="image" height="70px" class="hidden-xs pull-right" src="/img/me.jpg" />
+                            <img itemprop="image" height="70px" class="hidden-xs pull-right" src="/img/me_70.png" />
                         </span>
                     </div>
                     <div class="subtitle">Articles on javascript, open source and stuff</div>
@@ -41,7 +43,13 @@
             </header>
             <div>{{ content }}</div>
         </div>
-        <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+        <script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
     </body>
 
 </html>

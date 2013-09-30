@@ -67,42 +67,48 @@ div.box .title {
   font-size: 1.4em;
 }
 /* line 63, ../sass/main.scss */
+div.box img {
+  float: right;
+  height: 80px;
+  margin-left: 5px;
+}
+/* line 68, ../sass/main.scss */
 div.box time {
   display: inline-block;
   font-size: 0.7em;
   font-style: italic;
 }
-/* line 69, ../sass/main.scss */
+/* line 74, ../sass/main.scss */
 div.box .excerpt {
   text-overflow: ellipsis;
 }
 
 @media (max-width: 767px) {
-  /* line 76, ../sass/main.scss */
+  /* line 81, ../sass/main.scss */
   .container {
     padding: 0;
   }
 
-  /* line 79, ../sass/main.scss */
+  /* line 84, ../sass/main.scss */
   .col-xs-12 {
     padding-left: 0;
     padding-right: 0;
   }
 
-  /* line 83, ../sass/main.scss */
+  /* line 88, ../sass/main.scss */
   .row {
     margin-left: 0;
     margin-right: 0;
   }
 }
 @media (min-width: 992px) {
-  /* line 89, ../sass/main.scss */
+  /* line 94, ../sass/main.scss */
   footer {
     font-size: 1em;
     margin-bottom: 0;
   }
 
-  /* line 93, ../sass/main.scss */
+  /* line 98, ../sass/main.scss */
   .box {
     height: 200px;
     line-height: 25px;
@@ -110,7 +116,7 @@ div.box .excerpt {
     overflow: hidden;
   }
 
-  /* line 99, ../sass/main.scss */
+  /* line 104, ../sass/main.scss */
   .box:before {
     content: "";
     float: left;
@@ -118,14 +124,14 @@ div.box .excerpt {
     height: 200px;
   }
 
-  /* line 106, ../sass/main.scss */
+  /* line 111, ../sass/main.scss */
   .box > *:first-child {
     float: right;
     width: 100%;
     margin-left: -5px;
   }
 
-  /* line 112, ../sass/main.scss */
+  /* line 117, ../sass/main.scss */
   .box:after {
     content: "\02026";
     float: right;
@@ -162,13 +168,18 @@ article.post header h1 {
 article.post time {
   font-style: italic;
 }
-/* line 19, ../sass/_post.scss */
+/* line 18, ../sass/_post.scss */
+article.post img {
+  float: left;
+  margin-right: 10px;
+}
+/* line 22, ../sass/_post.scss */
 article.post #disqus_thread {
   padding-top: 10px;
   margin-top: 30px;
   border-top: solid 2px #565656;
 }
-/* line 24, ../sass/_post.scss */
+/* line 27, ../sass/_post.scss */
 article.post .social {
   text-align: right;
 }

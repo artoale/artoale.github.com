@@ -8,10 +8,12 @@ layout: default
         <meta itemprop="descriptions" 
   content="{{page.excerpt | strip_html }}" />
     </header>
-    {% if page.img %}
-        <meta itempropr="image" content="{{page.img}}" />
-    {% endif %}
+   
     <span itemprop="articleBody">
+     {% if page.img %}
+        <meta itempropr="image" content="/img/{{page.img}}" />
+        <img src="/img/{{page.img}}" />
+    {% endif %}
     {{ content }}
     </span>
        <div class="social">
