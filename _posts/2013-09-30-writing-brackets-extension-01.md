@@ -15,7 +15,8 @@ To summarize why I think Brackets, in a couple of quarter, is winning the web ed
 3. Even if it's not in alpha yet, is already pretty stable, a lot of extensions have been developed and it ships with some cool and peculiar features itself (quick edit, live developement, tern code intelligence, jslint, sass support and so on)
 
 Ok. Got it. It's nice. But it's missing &lt;THIS FEATURE&gt;!
-Right, me too. Let's add it, right now!
+
+Right, let's add it, right now!
 
 ##Always start with ponies
 
@@ -90,7 +91,19 @@ From within your code, you've access to some global variables:
 When we write a piece of code that runs in the browser, we usually listen (directly or not) to the `document.onload` event, to be sure that all the HTML has been parsed, the images are loaded and the DOM is ready. Since brackets needs to do some more complicated stuff at startup, registering an event on the onload event is not safe, part of the editor may not be loaded yet (requirejs is used for loading modules and it'is asyncronous) and you may not be able to access all the functionality you need. For that reason good guys brackets developers has gifted us with the `utils/AppInint` module. Our inizialization code should be passed as a callback to its `appReady` event (and not the `htmlReady`, since it's ***always*** fired before plugins are loaded!).
 
 
+### Let's try it!
 
+Yeah, but...it does nothing!
+
+Ok, just add a line to the `appReady` callback:
+
+```javascript
+    AppInit.appReady(function () {
+        console.log("I'm a fabulous unicorn!");
+    });
+```
+
+Better right?
 
 
 [sublime]: http://www.sublimetext.com/
