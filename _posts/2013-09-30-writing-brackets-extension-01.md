@@ -20,7 +20,7 @@ Right, let's add it, right now!
 
 ##Always start with ponies
 
-If the internet teached us something is that there are never enough ponies and unicorns around - and that certainly applies to brackets too. Let's add some sparkling happiness to our new web editor!
+If the internet teached us something is that there are never enough ponies and unicorns around - and that certainly applies to brackets too. Let's add some sparkling happiness to our new web editor! (Many thanks to my dear friend [Paolo Chillari](https://github.com/flea89) for suggestion the topic of this very first tutorial!)
 
 ###Project set-up
 
