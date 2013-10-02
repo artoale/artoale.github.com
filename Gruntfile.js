@@ -45,6 +45,7 @@ module.exports = function (grunt) {
                 options: {
                     src: '.',
                     dest: '.tmp',
+                    drafts: true,
                     raw: ['permalink: pretty', 'markdown: redcarpet', 'pygments: true', 'redcarpet:', '    extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables",     "with_toc_data"]'].join('\n')
                 }
             },
