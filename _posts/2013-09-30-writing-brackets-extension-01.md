@@ -393,7 +393,7 @@ In that case we have to change another line, because the `register` module requi
 CommandManager.register("Gimme some love", CORNIFY_CMD_ID, cornify.add.bind(cornify));
 ```
 
-In this particular case calling `bind` not required we could have simply passed `cornify.add` along...but since we're supposed not to know the internals of each and every library we use, this is a nice tip to make sure that the `add` function is called with the proper context. For more on context binding see [Function.prototype.bind](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind).
+In this particular case calling `bind` is not required: we could have simply passed `cornify.add` but, since we're supposed not to know the internals of each and every library we use, this is a nice tip to make sure that the `add` function is called with the proper context. For more on context binding see [Function.prototype.bind](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind).
 
 Your final script should look like this:
 
@@ -432,7 +432,7 @@ Developers usually love their keyboard more than their mother, and since Bracket
 helpMenu.addMenuItem(CORNIFY_CMD_ID, "Ctrl+Alt+U");
 ```
 
-This tell our editor to bind our command to the specified keystroke combination (and don't warry, `Ctrl` is replaced by `Cmd` automatically on Mac OS X).
+This tell our editor to bind our command to the specified keystroke combination (and don't worry, `Ctrl` is replaced by `Cmd` automatically on Mac OS X).
 
 That's all for part 1. If you have corrections or suggestions for next parts let me know in the comments (or on G+). I'll be writing on manipulating the editor content (maybe something on accessing Quick Edit) and how to use node.js internal process for greater good!
 
