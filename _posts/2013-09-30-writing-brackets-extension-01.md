@@ -436,7 +436,7 @@ This tell our editor to bind our command to the specified keystroke combination 
 
 That's all for part 1. If you have corrections or suggestions for next parts let me know in the comments (or on G+). I'll be writing on manipulating the editor content (maybe something on accessing Quick Edit) and how to use node.js internal process for greater good!
 
-**Update**: If you're eager to learn, you can now go straight to [Part 2]({% post_url 2013-10-04-writing-brackets-extension-02 %})
+**Update**: If you're eager to learn, you can now go straight to [Part 2](/tutorial/brackets/2013/10/04/writing-brackets-extension-02/)
 
 [sublime]: http://www.sublimetext.com/
 [webstorm]: http://www.jetbrains.com/webstorm/
