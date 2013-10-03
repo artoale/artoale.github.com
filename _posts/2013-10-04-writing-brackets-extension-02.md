@@ -6,7 +6,7 @@ categories: tutorial brackets
 img: dino.png
 ---
 
-A lot of editors and IDEs (or their plugin) offer the ability to automatically insert snipped of code when a specific sequence is typed. In this tutorial we're going to see how to insert beautiful creatures the same way (and yes, you will be able to adapt the code to insert real snippets but...that's boring!)
+A lot of editors and IDEs (or their plugin) offer the ability to automatically insert snippet of code when a specific sequence is typed. In this tutorial we're going to see how to insert beautiful creatures the same way (and yes, you will be able to adapt the code to insert real snippets but...that's boring!)
 
 I'm going to assume that you're familiar with the concepts of [part 1]({% post_url 2013-09-30-writing-brackets-extension-01 %}), in particular the extensions basic file tree, Brackets module loading, the AMD module definition and how to create new commands and menu items. TodaywWe will be focusing on how to interact with the current open document, react to text changes and inject text in the editor.
 
