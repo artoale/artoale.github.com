@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Writing Brackets extension - part 2"
-date:   2013-10-04 01:04:37
+date:   2013-10-04
 categories: tutorial brackets
 img: dino.png
 ---
