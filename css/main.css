@@ -160,7 +160,6 @@ code {
   font-size: 80%;
   color: #e2e2e2;
   background-color: #2f2f2f;
-  white-space: nowrap;
   border-radius: 4px;
 }
 
@@ -193,4 +192,11 @@ article.post #disqus_thread {
 /* line 28, ../sass/_post.scss */
 article.post .social {
   text-align: right;
+}
+/* line 33, ../sass/_post.scss */
+article.post pre code, article.post pre {
+  white-space: pre;
+  word-break: normal;
+  word-spacing: 0px;
+  word-wrap: normal;
 }
