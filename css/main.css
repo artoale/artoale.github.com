@@ -96,41 +96,42 @@ div.box .title {
 /* line 78, ../sass/main.scss */
 div.box img {
   float: right;
-  height: 80px;
+  max-height: 80px;
+  max-width: 100%;
   margin-left: 5px;
 }
-/* line 83, ../sass/main.scss */
+/* line 84, ../sass/main.scss */
 div.box time {
   display: inline-block;
   font-size: 0.7em;
   font-style: italic;
 }
-/* line 89, ../sass/main.scss */
+/* line 90, ../sass/main.scss */
 div.box .excerpt {
   text-overflow: ellipsis;
   letter-spacing: 1px;
 }
 
 @media (min-width: 768px) {
-  /* line 97, ../sass/main.scss */
+  /* line 98, ../sass/main.scss */
   .icons {
     float: right;
   }
 }
 @media (max-width: 767px) {
-  /* line 102, ../sass/main.scss */
+  /* line 103, ../sass/main.scss */
   body, html {
     font-size: 12px;
     line-height: 18px;
   }
 }
-/* line 107, ../sass/main.scss */
+/* line 108, ../sass/main.scss */
 .affix.subtitle {
   position: static;
 }
 
 @media (min-width: 992px) {
-  /* line 112, ../sass/main.scss */
+  /* line 113, ../sass/main.scss */
   .affix.subtitle {
     position: fixed;
     background-color: white;
@@ -140,13 +141,13 @@ div.box .excerpt {
     z-index: 1;
   }
 
-  /* line 121, ../sass/main.scss */
+  /* line 122, ../sass/main.scss */
   footer {
     font-size: 1em;
     margin-bottom: 0;
   }
 
-  /* line 125, ../sass/main.scss */
+  /* line 126, ../sass/main.scss */
   .box {
     height: 200px;
     line-height: 25px;
@@ -154,7 +155,7 @@ div.box .excerpt {
     overflow: hidden;
   }
 
-  /* line 131, ../sass/main.scss */
+  /* line 132, ../sass/main.scss */
   .box:before {
     content: "";
     float: left;
@@ -162,14 +163,14 @@ div.box .excerpt {
     height: 200px;
   }
 
-  /* line 138, ../sass/main.scss */
+  /* line 139, ../sass/main.scss */
   .box > *:first-child {
     float: right;
     width: 100%;
     margin-left: -5px;
   }
 
-  /* line 144, ../sass/main.scss */
+  /* line 145, ../sass/main.scss */
   .box:after {
     content: "\02026";
     float: right;
@@ -192,7 +193,7 @@ div.box .excerpt {
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 0%, #ffffff 50%, #ffffff);
   }
 }
-/* line 164, ../sass/main.scss */
+/* line 165, ../sass/main.scss */
 code {
   padding: 2px 4px;
   font-size: 80%;
