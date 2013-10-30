@@ -6,8 +6,8 @@
 body, html {
     height: 100%;
     font-family:$fontFamily;
-    
-   
+
+
     font-size: $base-font-size;
     line-height:$base-line-height;
     background-color: white; //$bgColor;
@@ -44,10 +44,10 @@ body, html {
     overflow: auto;
     border-bottom: solid 2px #3C3C3C;
     a {
-        color: $textColor;  
+        color: $textColor;
     }
     a:hover {
-        color: #ff7700;  
+        color: #ff7700;
     }
 }
 ul {
@@ -109,7 +109,14 @@ div.box {
     position:static;
 }
 @media (min-width: $maxTabletWidth) {
-  
+    .affix-top.subtitle {
+        position:absolute;
+        top: 110px;
+        width: 100%;
+    }
+    .big {
+        margin-bottom: 57.1875px;
+    }
     .affix.subtitle {
         position:fixed;
         background-color:white;
@@ -117,7 +124,7 @@ div.box {
         top:0;
         width: 100%;
         z-index:1;
-            
+
     }
     footer {
         font-size: 1em;

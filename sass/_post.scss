@@ -11,13 +11,10 @@ article.post {
     background-color:$textColorLight;
     color: $textColor;
      margin-top: 1.5em;
-//    font-family: 'Raleway', 'Open Sans', sans-serif;
     p {
         @include margin-leader();
         margin-bottom: 0;
         letter-spacing: 1px;
-//        margin-top: .75em;
-//        margin-bottom: .75em;
     }
     h1 {
         @include adjust-font-size-to(42px);
@@ -31,7 +28,7 @@ article.post {
           @include adjust-font-size-to(24px);
           @include padding-leader(1, 24px);
     }
-    
+
     h4 {
           @include adjust-font-size-to(18px);
           @include padding-leader(1, 18px);
@@ -39,7 +36,7 @@ article.post {
     header {
         margin-bottom: 0;
     }
-    
+
     .highlight {
          @include adjust-font-size-to(13px);
     }
@@ -59,12 +56,12 @@ article.post {
         margin-bottom: 10px;
         margin-top: 24px;
     }
-   
+
     .social {
         text-align: right;
     }
 
-    
+
     //Override stupid bootstrap wrapping (why?!)
     pre code, pre {
         white-space:pre;
@@ -77,7 +74,7 @@ article.post {
 
 
 .disqus {
-         
+
         padding-top: 10px;
 //        margin-top: 30px;
 //        border-top: solid 2px lighten($textColor, 10%);
@@ -99,10 +96,10 @@ article.post {
         margin: auto;
         float: none;
     }
-    
+
     p code {
         max-width: 100%;
-        display: inline-block;  
+        display: inline-block;
         overflow: auto;
     }
 }
