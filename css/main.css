@@ -10,7 +10,8 @@ html {
 }
 
 /* line 6, ../sass/main.scss */
-body, html {
+body,
+html {
   height: 100%;
   font-family: "Raleway", "Open Sans", sans-serif;
   font-size: 16px;
@@ -19,34 +20,34 @@ body, html {
   color: #3c3c3c;
 }
 
-/* line 17, ../sass/main.scss */
+/* line 15, ../sass/main.scss */
 .container.list {
   padding-top: 45px;
 }
 
-/* line 20, ../sass/main.scss */
+/* line 18, ../sass/main.scss */
 .big {
   padding: 20px 0 0 0;
   font-size: 1.3em;
   background-color: #ffd800;
 }
-/* line 24, ../sass/main.scss */
+/* line 22, ../sass/main.scss */
 .big h1 {
   padding: 0;
   font-size: 2.25em;
   line-height: 1.33333em;
   margin: 0;
 }
-/* line 28, ../sass/main.scss */
+/* line 26, ../sass/main.scss */
 .big h1 a, .big h1 a:hover {
   color: #3c3c3c;
 }
-/* line 32, ../sass/main.scss */
+/* line 30, ../sass/main.scss */
 .big img {
   margin-bottom: 20px;
 }
 
-/* line 37, ../sass/main.scss */
+/* line 34, ../sass/main.scss */
 .subtitle {
   background-color: white;
   padding-top: 0.75em;
@@ -55,22 +56,21 @@ body, html {
   white-space: nowrap;
   overflow: auto;
   border-bottom: solid 2px #3C3C3C;
+  a: hover;
+  a-color: #ff7700;
 }
-/* line 46, ../sass/main.scss */
+/* line 43, ../sass/main.scss */
 .subtitle a {
   color: #3c3c3c;
 }
-/* line 49, ../sass/main.scss */
-.subtitle a:hover {
-  color: #ff7700;
-}
 
-/* line 54, ../sass/main.scss */
-ul a, ul a:hover {
+/* line 52, ../sass/main.scss */
+ul a,
+ul a:hover {
   text-decoration: none;
 }
 
-/* line 58, ../sass/main.scss */
+/* line 56, ../sass/main.scss */
 footer {
   font-size: 1.4em;
   margin-bottom: 10px;
@@ -79,71 +79,76 @@ footer {
   padding: 5px 10px;
 }
 
-/* line 65, ../sass/main.scss */
+/* line 63, ../sass/main.scss */
 footer:hover {
   color: #FF7A00;
 }
 
-/* line 68, ../sass/main.scss */
+/* line 66, ../sass/main.scss */
 div.box {
   padding: 10px;
   background-color: white;
 }
-/* line 73, ../sass/main.scss */
+/* line 69, ../sass/main.scss */
 div.box .title {
   font-size: 1.4em;
 }
-/* line 78, ../sass/main.scss */
+/* line 73, ../sass/main.scss */
 div.box img {
   float: right;
   max-height: 80px;
   max-width: 100%;
   margin-left: 5px;
 }
-/* line 84, ../sass/main.scss */
+/* line 79, ../sass/main.scss */
 div.box time {
   display: inline-block;
   font-size: 0.7em;
   font-style: italic;
 }
-/* line 90, ../sass/main.scss */
+/* line 84, ../sass/main.scss */
 div.box .excerpt {
   text-overflow: ellipsis;
   letter-spacing: 1px;
 }
 
 @media (min-width: 768px) {
-  /* line 98, ../sass/main.scss */
+  /* line 91, ../sass/main.scss */
   .icons {
     float: right;
   }
 }
 @media (max-width: 767px) {
-  /* line 103, ../sass/main.scss */
+  /* line 96, ../sass/main.scss */
   body, html {
     font-size: 12px;
     line-height: 18px;
   }
 }
-/* line 108, ../sass/main.scss */
+/* line 101, ../sass/main.scss */
 .affix.subtitle {
   position: static;
 }
 
 @media (min-width: 992px) {
-  /* line 112, ../sass/main.scss */
+  /* line 105, ../sass/main.scss */
   .affix-top.subtitle {
     position: absolute;
     top: 110px;
     width: 100%;
   }
 
-  /* line 117, ../sass/main.scss */
+  /* line 110, ../sass/main.scss */
   .big {
     margin-bottom: 57.1875px;
   }
 
-  /* line 120, ../sass/main.scss */
+  /* line 113, ../sass/main.scss */
+  .subtitle:not(.affix), .subtitle:not(.affix-top) {
+    margin-bottom: -57.1875px;
+  }
+
+  /* line 116, ../sass/main.scss */
   .affix.subtitle {
     position: fixed;
     background-color: white;
@@ -153,13 +158,13 @@ div.box .excerpt {
     z-index: 1;
   }
 
-  /* line 129, ../sass/main.scss */
+  /* line 124, ../sass/main.scss */
   footer {
     font-size: 1em;
     margin-bottom: 0;
   }
 
-  /* line 133, ../sass/main.scss */
+  /* line 128, ../sass/main.scss */
   .box {
     height: 200px;
     line-height: 25px;
@@ -167,7 +172,7 @@ div.box .excerpt {
     overflow: hidden;
   }
 
-  /* line 139, ../sass/main.scss */
+  /* line 134, ../sass/main.scss */
   .box:before {
     content: "";
     float: left;
@@ -175,14 +180,14 @@ div.box .excerpt {
     height: 200px;
   }
 
-  /* line 146, ../sass/main.scss */
+  /* line 140, ../sass/main.scss */
   .box > *:first-child {
     float: right;
     width: 100%;
     margin-left: -5px;
   }
 
-  /* line 152, ../sass/main.scss */
+  /* line 145, ../sass/main.scss */
   .box:after {
     content: "\02026";
     float: right;
@@ -205,7 +210,7 @@ div.box .excerpt {
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 0%, #ffffff 50%, #ffffff);
   }
 }
-/* line 172, ../sass/main.scss */
+/* line 161, ../sass/main.scss */
 code {
   padding: 2px 4px;
   font-size: 80%;

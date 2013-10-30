@@ -1,28 +1,26 @@
-@import 'variables';
-@import "compass/typography/vertical_rhythm";
-@import 'compass/css3';
-
-@include establish-baseline($base-font-size);
-body, html {
+@import'variables';
+ @import"compass/typography/vertical_rhythm";
+ @import'compass/css3';
+ @include establish-baseline($base-font-size);
+ body,
+html {
     height: 100%;
-    font-family:$fontFamily;
-
-
+    font-family: $fontFamily;
     font-size: $base-font-size;
-    line-height:$base-line-height;
-    background-color: white; //$bgColor;
+    line-height: $base-line-height;
+    background-color: white;
+    //$bgColor;
     color: $textColor;
 }
-
 .container.list {
-     padding-top: 45px;
+    padding-top: 45px;
 }
 .big {
     padding: 20px 0 0 0;
     font-size: 1.3em;
-    background-color:$mainColor;
+    background-color: $mainColor;
     h1 {
-        padding:0;
+        padding: 0;
         @include adjust-font-size-to(36px);
         margin: 0;
         a, a:hover {
@@ -33,10 +31,9 @@ body, html {
         margin-bottom: 20px;
     }
 }
-
 .subtitle {
     background-color: white;
-//    padding: 10px 0;
+    // padding: 10px 0;
     padding-top: rhythm(1, $base-font-size) / 2;
     padding-bottom: rhythm(1, $base-font-size) / 2;
     text-overflow: ellipsis;
@@ -46,13 +43,14 @@ body, html {
     a {
         color: $textColor;
     }
-    a:hover {
+    a: hover {
         color: #ff7700;
     }
 }
 ul {
-    a, a:hover {
-            text-decoration:none;
+    a,
+    a:hover {
+        text-decoration: none;
     }
 }
 footer {
@@ -66,17 +64,14 @@ footer:hover {
     color: #FF7A00;
 }
 div.box {
-    padding:10px;
-
+    padding: 10px;
     background-color: $textColorLight;
-
     .title {
         font-size: 1.4em;
-//        line-height:1em;
+        // line-height: 1em;
     }
-
     img {
-        float:right;
+        float: right;
         max-height: 80px;
         max-width: 100%;
         margin-left: 5px;
@@ -84,47 +79,47 @@ div.box {
     time {
         display: inline-block;
         font-size: 0.7em;
-        font-style:italic;
+        font-style: italic;
     }
-
     .excerpt {
-        text-overflow:ellipsis;
+        text-overflow: ellipsis;
         letter-spacing: 1px;
-//        font-size: 1em;
+        // font-size: 1em;
     }
-
 }
 @media (min-width: 768px) {
     .icons {
-        float:right;
+        float: right;
     }
 }
 @media (max-width: 767px) {
     body, html {
         font-size: 12px;
-        line-height:18px;
+        line-height: 18px;
     }
 }
 .affix.subtitle {
-    position:static;
+    position: static;
 }
 @media (min-width: $maxTabletWidth) {
     .affix-top.subtitle {
-        position:absolute;
+        position: absolute;
         top: 110px;
         width: 100%;
     }
     .big {
         margin-bottom: 57.1875px;
     }
+    .subtitle:not(.affix), .subtitle:not(.affix-top) {
+        margin-bottom: - 57.1875px;
+    }
     .affix.subtitle {
-        position:fixed;
-        background-color:white;
-        opacity:0.9;
-        top:0;
+        position: fixed;
+        background-color: white;
+        opacity: 0.9;
+        top: 0;
         width: 100%;
-        z-index:1;
-
+        z-index: 1;
     }
     footer {
         font-size: 1em;
@@ -132,25 +127,22 @@ div.box {
     }
     .box {
         height: 200px;
-        line-height:25px;
-        padding:10px 10px 0 10px;
-        overflow:hidden;
+        line-height: 25px;
+        padding: 10px 10px 0 10px;
+        overflow: hidden;
     }
     .box:before {
-        content:"";
-        float:left;
+        content: "";
+        float: left;
         width: 5px;
         height: 200px;
     }
-
     .box > *:first-child {
-        float:right;
+        float: right;
         width: 100%;
         margin-left: -5px;
     }
-
     .box:after {
-
         content: "\02026";
         float: right;
         position: relative;
@@ -162,20 +154,15 @@ div.box {
         text-align: right;
         background-size: 100% 100%;
         background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAABCAMAAACfZeZEAAAABGdBTUEAALGPC/xhBQAAAwBQTFRF////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wDWRdwAAAP90Uk5TgsRjMZXhS30YrvDUP3Emow1YibnM9+ggOZxrBtpRRo94gxItwLOoX/vsHdA2yGgL8+TdKUK8VFufmHSGgAQWJNc9tk+rb5KMCA8aM0iwpWV6dwP9+fXuFerm3yMs0jDOysY8wr5FTldeoWKabgEJ8RATG+IeIdsn2NUqLjQ3OgBDumC3SbRMsVKsValZplydZpZpbJOQco2KdYeEe36BDAL8/vgHBfr2CvTyDu8R7esU6RcZ5ecc4+Af3iLcJSjZ1ivT0S/PMs3LNck4x8U7wz7Bv0G9RLtHuEq1TbJQr1OtVqqnWqRdoqBhnmSbZ5mXapRtcJGOc4t2eYiFfH9AS7qYlgAAARlJREFUKM9jqK9fEGS7VNrDI2+F/nyB1Z4Fa5UKN4TbbeLY7FW0Tatkp3jp7mj7vXzl+4yrDsYoVx+JYz7mXXNSp/a0RN25JMcLPP8umzRcTZW77tNyk63tdprzXdmO+2ZdD9MFe56Y9z3LUG96mcX02n/CW71JH6Qmf8px/cw77ZvVzB+BCj8D5vxhn/vXZh6D4uzf1rN+Cc347j79q/zUL25TPrJMfG/5LvuNZP8rixeZz/mf+vU+Vut+5NL5gPOeb/sd1dZbTs03hBuvmV5JuaRyMfk849nEM7qnEk6IHI8/qn049hB35QGHiv0yZXuMdkXtYC3ebrglcqvYxoj1muvC1nDlrzJYGbpcdHHIMo2FwYv+j3QAAOBSfkZYITwUAAAAAElFTkSuQmCC);
-
         @include box-sizing(content-box);
-        @include background-image(linear-gradient(to right, rgba(255, 255, 255, 0),rgba(255, 255, 255, 0) 0%, $textColorLight 50%, $textColorLight));
+        @include background-image(linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 0%, $textColorLight 50%, $textColorLight));
     }
-
 }
-
 code {
     padding: 2px 4px;
     font-size: 80%;
-//    color: $textColorLight;
-//    background-color: #2f2f2f;
+    // color: $textColorLight;
+    // background-color: #2f2f2f;
     border-radius: 4px;
 }
-
-
-@import '_post';
+@import'_post';
