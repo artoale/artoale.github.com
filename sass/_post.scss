@@ -64,11 +64,7 @@ article.post {
         text-align: right;
     }
 
-    p code {
-        max-width: 100%;
-        display: inline-block;  
-        overflow: auto;
-    }
+    
     //Override stupid bootstrap wrapping (why?!)
     pre code, pre {
         white-space:pre;
@@ -102,5 +98,11 @@ article.post {
         display: block;
         margin: auto;
         float: none;
+    }
+    
+    p code {
+        max-width: 100%;
+        display: inline-block;  
+        overflow: auto;
     }
 }

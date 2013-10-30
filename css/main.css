@@ -274,13 +274,7 @@ article.post img {
 article.post .social {
   text-align: right;
 }
-/* line 67, ../sass/_post.scss */
-article.post p code {
-  max-width: 100%;
-  display: inline-block;
-  overflow: auto;
-}
-/* line 73, ../sass/_post.scss */
+/* line 69, ../sass/_post.scss */
 article.post pre code, article.post pre {
   white-space: pre;
   word-break: normal;
@@ -288,7 +282,7 @@ article.post pre code, article.post pre {
   word-wrap: normal;
 }
 
-/* line 83, ../sass/_post.scss */
+/* line 79, ../sass/_post.scss */
 .disqus {
   padding-top: 10px;
   color: white;
@@ -302,10 +296,17 @@ article.post pre code, article.post pre {
 }
 
 @media (max-width: 767px) {
-  /* line 101, ../sass/_post.scss */
+  /* line 97, ../sass/_post.scss */
   article.post img {
     display: block;
     margin: auto;
     float: none;
+  }
+
+  /* line 103, ../sass/_post.scss */
+  p code {
+    max-width: 100%;
+    display: inline-block;
+    overflow: auto;
   }
 }
