@@ -1,39 +1,54 @@
 @import 'variables';
+@import "compass/typography/vertical_rhythm";
 @import 'compass/css3';
 
+@include establish-baseline($base-font-size);
 body, html {
     height: 100%;
     font-family:$fontFamily;
-    background-color:$bgColor;
+    
+   
+    font-size: $base-font-size;
+    line-height:$base-line-height;
+    background-color: white; //$bgColor;
     color: $textColor;
 }
-.container header {
-    .big {
-        padding: 20px;
-        font-size: 1.3em;
-        background-color:$mainColor;
-        border-top: solid 5px $borderColor;
-        h1 {
-            padding:0;
-            font-size:1.3em;
-            a, a:hover {
-                color: $textColor;
-            }
-        }
-        img {
-            position:absolute;
-            top: 20px;
-            right:30px;
-            @include border-radius(100%);
+
+.container.list {
+     padding-top: 45px;
+}
+.big {
+    padding: 20px 0 0 0;
+    font-size: 1.3em;
+    background-color:$mainColor;
+    h1 {
+        padding:0;
+        @include adjust-font-size-to(36px);
+        margin: 0;
+        a, a:hover {
+            color: $textColor;
         }
     }
-
-    .subtitle {
-        background-color: white;
-        padding: 10px 20px;
+    img {
+        margin-bottom: 20px;
     }
+}
 
-    margin-bottom: 30px;
+.subtitle {
+    background-color: white;
+//    padding: 10px 0;
+    padding-top: rhythm(1, $base-font-size) / 2;
+    padding-bottom: rhythm(1, $base-font-size) / 2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: auto;
+    border-bottom: solid 2px #3C3C3C;
+    a {
+        color: $textColor;  
+    }
+    a:hover {
+        color: #ff7700;  
+    }
 }
 ul {
     a, a:hover {
@@ -43,15 +58,15 @@ ul {
 footer {
     font-size: 1.4em;
     margin-bottom: 10px;
-    background-color: $borderColor;
-    color: $textColorLight;
-//    font-size: 1.2em;
+    color: $textColor;
+    border-top: solid 2px $borderColor;
     padding: 5px 10px;
 }
-
+footer:hover {
+    color: #FF7A00;
+}
 div.box {
     padding:10px;
-//    line-height:25px;
 
     background-color: $textColorLight;
 
@@ -73,24 +88,36 @@ div.box {
 
     .excerpt {
         text-overflow:ellipsis;
+        letter-spacing: 1px;
 //        font-size: 1em;
     }
 
 }
-@media (max-width: 767px) {
-    .container {
-        padding: 0;
-    }
-    .col-xs-12 {
-        padding-left: 0;
-        padding-right: 0;
-    }
-    .row {
-        margin-left: 0;
-        margin-right: 0;
+@media (min-width: 768px) {
+    .icons {
+        float:right;
     }
 }
+@media (max-width: 767px) {
+    body, html {
+        font-size: 12px;
+        line-height:18px;
+    }
+}
+.affix.subtitle {
+    position:static;
+}
 @media (min-width: $maxTabletWidth) {
+  
+    .affix.subtitle {
+        position:fixed;
+        background-color:white;
+        opacity:0.9;
+        top:0;
+        width: 100%;
+        z-index:1;
+            
+    }
     footer {
         font-size: 1em;
         margin-bottom: 0;
@@ -137,8 +164,8 @@ div.box {
 code {
     padding: 2px 4px;
     font-size: 80%;
-    color: $textColorLight;
-    background-color: #2f2f2f;
+//    color: $textColorLight;
+//    background-color: #2f2f2f;
     border-radius: 4px;
 }
 

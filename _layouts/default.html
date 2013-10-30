@@ -8,7 +8,7 @@
          {% if page.img %}
         <meta property="og:image" content="http://artoale.com/img/{{page.img}}" />
         {% endif %}
-        <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css' />
+        <link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
         <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAASElEQVQ4T2O0sbH5z0ABYBx4A/7fYKDMCzQxwDbFBmuwHp5zBEOcEd0FuDTDdKIbgtMAdIUwg4eQAbgSJ9FeoNiAIRyIpOZsAHXmWghLeTzQAAAAAElFTkSuQmCC" type="image/x-icon" />
         
@@ -25,27 +25,40 @@
         <title>{{page.title}}</title>
     </head>
     
-    <body>
-        <div class="container" itemscope itemtype="http://schema.org/Article">
-            <header class="row">
-                <div class=" col-xs-12">
-                    <div class="big">
-                        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-                            <h1>
-                                <a href="/blog">
-                                    <span itemprop="name">Alessandro Artoni</span>
-                                    <meta itemprop="url" content="http://artoale.com" />
-                                    <span itemprop="additionalName" class="nick">@artoale</span>
-                                </a>
-                            </h1>
-                            <img itemprop="image" height="70px" class="hidden-xs pull-right" src="/img/me_70.png" />
-                        </span>
-                    </div>
-                    <div class="subtitle">Articles on javascript, open source and stuff</div>
-                </div>
-            </header>
-            <div>{{ content }}</div>
+    <body itemscope itemtype="http://schema.org/Article">
+             <div class="big">
+<div class="container">
+    <header class="row">
+        <div class=" col-xs-12">
+            <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <h1>
+                    <a href="/">
+                        <span itemprop="name">Alessandro Artoni</span>
+                        <meta itemprop="url" content="http://artoale.com" />
+<!--                        <span itemprop="additionalName" class="nick">/blog</span>-->
+                    </a>
+                     <img itemprop="image" height="70px" class="hidden-xs pull-right" src="/img/me_70.png" />
+                </h1>
+               
+            </span>
         </div>
+    </header>
+</div>
+<div class="subtitle" data-spy="affix" data-offset-top="110">
+    <div class="container"><div class="row">
+        <div class="col-sm-12">Javascript, open source and stuff
+        <span class="icons">
+            <a href="/blog"><i class="icon-megaphone-1" ></i></a>
+            <a href="//github.com/artoale" target="_blank"><i class="icon-github-circled" ></i></a>
+            <a href="//google.com/+AlessandroArtoni" target="_blank"><i class=" icon-gplus-squared" ></i></a> 
+        </span>
+        </div>
+    </div></div>
+</div>
+</div>
+<div>{{ content }}</div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
         <script type="text/javascript">
   (function() {
     var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;

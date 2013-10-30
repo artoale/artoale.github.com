@@ -19,6 +19,9 @@ body, html {
 .box {
     -webkit-transition: all .2s ease;
     color: $textColorLight;
+    span {
+        margin-left: -30px;
+    }
 }
 
 .big {

@@ -1,14 +1,52 @@
-article.post {
-    background-color:$textColor;
-    color: $textColorLight;
-    padding: 20px;
 
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+        font-weight: 700;
+        margin: 0;
+        font-family: $fontFamily;
+}
+article.post {
+    a {
+        color: #FF7000;
+    }
+    background-color:$textColorLight;
+    color: $textColor;
+     margin-top: 1.5em;
+//    font-family: 'Raleway', 'Open Sans', sans-serif;
+    p {
+        @include margin-leader();
+        margin-bottom: 0;
+        letter-spacing: 1px;
+//        margin-top: .75em;
+//        margin-bottom: .75em;
+    }
+    h1 {
+        @include adjust-font-size-to(42px);
+          @include padding-leader(1, 42px);
+    }
+    h2 {
+          @include adjust-font-size-to(36px);
+          @include padding-leader(1, 36px);
+    }
+    h3 {
+          @include adjust-font-size-to(24px);
+          @include padding-leader(1, 24px);
+    }
+    
+    h4 {
+          @include adjust-font-size-to(18px);
+          @include padding-leader(1, 18px);
+    }
     header {
-        h1 {
-            border-bottom:solid 2px lighten($textColor, 10%);
-        }
+        margin-bottom: 0;
+    }
+    
+    .highlight {
+         @include adjust-font-size-to(13px);
     }
 
+    ul, ol {
+        margin-bottom: 1.5em;
+    }
     time {
         font-style:italic;
 //        border-top
@@ -17,14 +55,11 @@ article.post {
     }
     img {
         float: left;
-        margin-right: 10px;
+        margin-right: 24px;
         margin-bottom: 10px;
+        margin-top: 24px;
     }
-    #disqus_thread {
-        padding-top: 10px;
-        margin-top: 30px;
-        border-top: solid 2px lighten($textColor, 10%);
-    }
+   
     .social {
         text-align: right;
     }
@@ -36,5 +71,31 @@ article.post {
         word-spacing: 0px;
         word-wrap: normal;
 
+    }
+}
+
+
+.disqus {
+         
+        padding-top: 10px;
+//        margin-top: 30px;
+//        border-top: solid 2px lighten($textColor, 10%);
+        color: $textColorLight;
+        background-color: $textColor;
+        padding-top: 10px;
+        margin-top: 30px;
+        border-top: solid 2px #565656;
+//        margin-left: -24px;
+//        margin-right: -24px;
+        padding: 24px;
+        padding-bottom: 0;
+        padding-bottom: 24px;
+    }
+
+@media (max-width: 767px) {
+    article.post img {
+        display: block;
+        margin: auto;
+        float: none;
     }
 }

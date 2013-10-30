@@ -2,7 +2,7 @@
 layout: default
 title: Articles on javascript, open source and stuff
 ---
-<div>
+<div class="container list" >
     <ul class="list-unstyled row">
         {% for post in site.posts %}
 <!--        <a href="{{ post.url }}">-->
@@ -18,7 +18,7 @@ title: Articles on javascript, open source and stuff
                 </div>
                 <a href="{{post.url}}">
                     <footer>
-                        Read the full article <span class="glyphicon glyphicon-play-circle pull-right"></span>
+                        Read the full article <span class="glyphicon glyphicon-chevron-right pull-right"></span>
                     </footer>
                 </a>
             </li>
