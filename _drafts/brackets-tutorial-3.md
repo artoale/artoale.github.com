@@ -44,4 +44,10 @@ When you write the code to be executed inside node, your module have to expose a
 function registerCommand(domainName, commandName, commandFunction, isAsync, description, parameters, returns) { /*...*/ };
 ```
 * `registerEvent`: when you want the code inside node to asyncronously notify Brackets of something, you'll have to register a domain event. Pass in the `domainName` and the name of the event you're registering.
-*
+* `emitEvent`: trigger the event previously declared. A part from the domain and event names you can pass as third parameter - but beware, it will be converted to *JSON*. No function here!
+
+That said, it's clearly time to get our hands dirty, and put our effort in something practical: 
+
+###A domain at work
+
+Inside the root folder of your extension, create a `node` folder (not required, but a useful convention) and an `ExampleDomain.js` inside it here's a basic 
