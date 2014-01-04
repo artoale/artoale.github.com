@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Alessandro Artoni - Developing for the Open Web Platform</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.min.css">
+    <link rel="stylesheet" href="bower_components/reveal.js/css/theme/default.css">
+    <link rel="stylesheet" href="bower_components/reveal.js/lib/css/zenburn.css">
+
+    <link rel="stylesheet" href="styles/97684f60.main.css">
+
+
+    <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+
+    <div class="reveal">
+
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section>
+                <h3>Internship report</h3>
+                <h1>Developing for the
+                    <br>"Open Web Platform"</h1>
+                <p>SAP AG · EURECOM</p>
+                <p>
+                    <a href="http://artoale.com">Alessandro Artoni</a> · <a href="mailto:steve.kopp@sap.com">Steve Kopp</a> · <a href="mailto:Jean-Luc.Dugelay@eurecom.fr">Jean-Luc Dugelay</a>
+                </p>
+            </section>
+
+            <section>
+                <h2>CHOOSING A PLATFORM</h2>
+                <h3>Classic options</h3>
+                <ul>
+                    <li>Native application (OS specific API)</li>
+                    <li>VM based multi-platform solution (Java, AIR, .NET, ...)</li>
+                </ul>
+                <aside class="notes">
+
+                </aside>
+            </section>
+            <section>
+                <h2>Native application</h2>
+                <h3>A Maintainability nightmare</h3>
+                <ul>
+                    <li>
+                        <p>OS interaction must be handled by specific code for each platform.</p>
+                    </li>
+                    <li>
+                        <p>Windows, Mac OS X, Linux, Android, iOS, Windows Phone, Blackberry...</p>
+                    </li>
+                    <li>
+                        <p>Device form factor?</p>
+                    </li>
+                </ul>
+
+                <aside class="notes">
+
+                </aside>
+            </section>
+            <section>
+                <h2>Java, Flash, .NET &amp; co.</h2>
+                <h3></h3>
+                <ul>
+                    <li>Better cross compatibility but...</li>
+                    <li>...very bad mobile support</li>
+                    <li>Proprietary</li>
+                </ul>
+
+                <aside class="notes">
+                    Proprietary (evolution driven by a specific company)
+                </aside>
+            </section>
+
+            <section>
+                <h2>another option:</h2>
+                <h1>WEB BROWSER</h1>
+            </section>
+            <section>
+                <h2>Advantages</h2>
+                <ul>
+                    <li>Available in virtually every device</li>
+                    <li>Flexible programming model</li>
+                    <li>Faster prototyping</li>
+                    <li>Software update = page reload</li>
+                    <li>"Open" platform</li>
+                </ul>
+                <aside class="notes">
+                    available in every device made for the use of human being
+                </aside>
+            </section>
+            <section>
+                <h2>The event loop</h2>
+                <ul>
+                    <li>Code in the browser is SINGLE threaded</li>
+                    <li>Your code <em>react</em> to external events</li>
+                    <li>Your code <em>never</em> block itself</li>
+                    <li>No deadlock, no starvation</li>
+
+                </ul>
+                <aside class="notes">
+
+                </aside>
+            </section>
+            <section>
+                <h1>HOW DOES A BROWSER WORK?</h1>
+                <aside class="notes">
+                </aside>
+            </section>
+            <section id="parsing">
+                <h2>HTML Parsing</h2>
+                <pre>
+                    <code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+        &lt;script src=&quot;main.js&quot;&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;nav&gt;
+            &lt;a href=&quot;/home&quot;&gt;Home&lt;/a&gt;
+            &lt;button&gt;Archive&lt;/button&gt;
+        &lt;/nav&gt;
+        &lt;section&gt;
+            &lt;article&gt;
+                &lt;h1&gt;A Title&lt;/h1&gt;
+                &lt;p&gt;Article body
+            &lt;/article&gt;
+        &lt;/section&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code>
+                </pre>
+            </section>
+            <section id="dom">
+                <h2>The DOM</h2>
+                <div class="svg-body"></div>
+                <div class="fragment" data-fragment-id="start"></div>
+            </section>
+            <section>
+                <h2>Adding style with CSS</h2>
+                <pre>
+                    <code>article h1 {
+    display: none;
+}
+nav > a:after {
+    content: 'Some text';
+}
+
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <h2>The Render Tree</h2>
+                <div class="svg-body"></div>
+                <div class="fragment" data-fragment-id="render"></div>
+            </section>
+
+            <section id="themes">
+                <h2>EXPLOITING THE GPU</h2>
+                <ul>
+                    <li>Some RenderLayer get its own backing surface</li>
+                    <li>A new <code>GraphicsLayer</code> tree is generated</li>
+                    <li>Each RenderLayer asks all of its RenderObjects to paint themselves into the GraphicsLayer’s GraphicsContext, which is backed by a bitmap in shared system memory</li>
+                    <li>The compositor keeps track of which GraphicsLayers have changed since the last time they were drawn and only updates the textures as needed</li>
+                    <li>The new, composite bitmap is drawn to screen</li>
+                </ul>
+                <aside class="notes">
+                    Layer has 3D css transform or is a video or canvas element using accelerated video decoding
+                    flash, silverlight plugin
+                </aside>
+            </section>
+            <section>
+                <h1>Web Develoment in practice</h1>
+                <aside class="notes">
+                   to put this in practice, during my internship at SAP I've been working on 2 main project: KeyPoints and Story Telling (infographics)
+                </aside>
+            </section>
+            <section>
+                <h2>KeyPoints</h2>
+                <p><em>Extraction</em> and <em>transformation</em> of data into monitorable <em>Key Points</em>. Key Points are visual cues that highlight key data</p>
+                <img src="images/4d0fa9fa.kp.png" alt="">
+                <img src="images/87d328ed.kp2.png" alt="">
+
+                <aside class="notes">
+                The project aims at enabling the extraction and transformation of data into monitorable Key Points. Key Points are visual cues that highlight key data: core requirement is that they must be independent web wid- get, embeddable in multiple browser-based application both desktop and mobile. The first release, planned for September 15th, targeted SAP Lumira Desktop, a BI1 application for data exploration and inter- active dashboarding, as first integration platform and two type of Key Points were to be delivered: “Numeric” and “Trend” along with an em- bedding gallery, called the “Highlight Page”.
+                </aside>
+            </section>
+            <section>
+                <h2>Components</h2>
+                I've been working on three <em>experimental</em> component to showcase the advanced usage of KeyPoints and possible evolution of the project in our vision:
+                <ul>
+                    <li>Configuration UI</li>
+                    <li>Highlight Page Global performance indicator</li>
+                    <li>HIghlight Page Manager</li>
+                </ul>
+
+                <aside class="notes">
+                </aside>
+            </section>
+            <section>
+                <h2>The Workflow</h2>
+                <ul>
+                    <li class="fragment">A piece of data is selected (one or more bar in a bar chart)</li>
+                    <li class="fragment">User decide to creating a key point starting from this selection</li>
+                    <li class="fragment">Different KP are possible, depending on the type of selection</li>
+                    <li class="fragment">We provide a <em>service</em> - the Advisor - to suggest a list of possible point</li>
+                    <li class="fragment">Depending on the requested point, additional configuration may be required</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Configuration UI</h2>
+                    <img src="images/77d3e7d0.advisor_1.png">
+                    <img src="images/c31e4fdc.advisor_2.png">
+            </section>
+            <section>
+                <h2>Configuration UI</h2>
+                <ul>
+                    <li>Built using SAPUI5</li>
+                    <li>Put to stress the time-query system</li>
+                    <li>Enables <em>gamification</em> feature</li>
+                </ul>
+                <aside class="notes">
+                    dopo gamification: since we found this feature of particular interest, we decided to extend it to the Highlight page
+                </aside>
+            </section>
+            <section>
+                <h2>Highlight Page Global performance indicator</h2>
+                <ul>
+                    <li>Display the overall state of point of interest</li>
+                    <li>Allows user to specify the "importance" of each keypoint</li>
+                    <li>The global performance value is computed as weighted average</li>
+                    <li>Weather indicator, consistent with Key Points</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Highlight Page Global performance indicator</h2>
+                <img src="images/e26caadd.game.png" alt="">
+            </section>
+            <section>
+                <h2>Highlight Page Manager</h2>
+                <h3>Motivation</h3>
+                <p>Some interesting feature for the Highlight Page were not planned for v1.0 because of time constraint. Two of these features, namely <em>Filtering</em> and <em>Ordering</em>, has been implemented as "experimental"</p>
+            </section>
+            <section>
+                <h2>Highlight Page Manager</h2>
+                <h3>Objective</h3>
+                <ul>
+                    <li>Filtering based on measures, dimensions and points status</li>
+                    <li>Drag &amp; Drop-based keypoints reordering</li>
+                    <li>Keep global performance indicator and point weights consistent</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Highlight Page Manager</h2>
+                <h3>Filtering</h3>
+                <img src="images/51f89d87.manager2.png" alt="">
+            </section>
+            <section>
+                <h2>Highlight Page Manager</h2>
+                <h3>Reordering</h3>
+                <img src="images/e54d618d.manager3.png" alt="">
+            </section>
+            <section>
+                <h1>Story telling</h1>
+                <h2>AKA: Infographics</h2>
+                <p class="fragment">Add to Lumira Desktop capabilities for the creation of infographics, exploiting the availability of real data, charts and infocharts</p>
+            </section>
+            <section>
+                <h2>Infographics</h2>
+                <h3>Key Aspects</h3>
+                <ul>
+                    <li>Responsiveness</li>
+                    <li>Authoring</li>
+                    <li>Customization</li>
+                    <li>Image Export</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Responsive Grid</h2>
+                <p>Infographics are <em>responsive</em> website built on top of Twitter Bootstrap grid system</p>
+                <ul>
+                    <li>Based on CSS3 Media Query</li>
+                    <li>Elements are placed within rows and can take from 1 up to 12 columns</li>
+                    <li>As the display size shrink, elements are stacked vertically, to keep them usable</li>
+                </ul>
+            </section>
+            <section>
+                <img src="images/b05f7351.desktop.png" alt="">
+                <img src="images/93d34772.tablet.png" alt="">
+                <img src="images/f79063c7.smart.png" alt="">
+            </section>
+            <section>
+                <h2>The interaction model</h2>
+                ￼<ul>
+                    <li>Narrate a story: page based model</li>
+                    <li>Scroll/touch gestures trigger transition between pages</li>
+                    <li>Problem: what if a page is bigger than the screen?</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Problems with touch events</h2>
+                <ul>
+                    <li>When to perform the animated transition?</li>
+                    <li>Do we allow elements to overflow horizontally?</li>
+                    <li>Scroll event handlers must be FAST, otherwhise, scrolling becomes laggy</li>
+                </ul>
+            </section>
+            <section>
+                <img src="images/964f3780.interaction_2.png" alt="">
+                <aside class="notes">
+                    when user start a swipe gesture we check if something is overflowing. If yes we immediatly return control to the browser to perform standard in-page scroll and we stop listening for touch events to make scrolling smooth. Otherwise, we check the swipe direction and, when the action is bigger than a given treshold, we perform the required transition.
+                </aside>
+            </section>
+            <section>
+                <h2>Image export</h2>
+                <p>Since the basic output is HTML, we cannot directly export it as an image. To support PNG export we:</p>
+                <ul>
+                    <li>Generate a (fixed-size) SVG, starting from the same model</li>
+                    <li>For each image present:
+                    <ul>
+                        <li>create a <code>&lt;canvas&gt;</code></li>
+                        <li>Draw the image into the canvas</li>
+                        <li>replace the original image with its base64 PNG encoded version</li>
+                        <li>(external images would block next steps)</li>
+                    </ul>
+                    </li>
+                    <li>Create another canvas, as big as the final image</li>
+                    <li>draw the generated SVG inside the canvas</li>
+                    <li>Make the base64 PNG available to download as a link</li>
+                </ul>
+            </section>
+            <section>
+                <h1>Performances Evaluation</h1>
+            </section>
+            <section>
+                <h2>Key Points</h2>
+                <p>Since everything is build as SAPUI5 component, performances are strictly related to those of the framework. In particular, I've experienced some problem with:</p>
+                <ul>
+                    <li>Synchronous dependency management</li>
+                    <li>Recursive component redraw</li>
+                    <li>The 'thicks' in the slider made the component esponentially slow</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Story Telling</h2>
+                <h3>Tools, not rules.</h3>
+                <aside class="notes">programmers tend to focus on the code base like nested loop cycles which, in web development is almost never the root cause of poor performances: javascript code in the browser runs extremely fast and even the javascript to DOM interaction which used to be a bottleneck in old engines, is becoming faster and faster nowadays.</aside>
+            </section>
+            <section>
+                <h2>Optimal Target</h2>
+                <ul>
+                    <li>For non-animated interaction: 100ms</li>
+                    <li>For animation and transition: &lt;16ms (60 fps)</li>
+                    <li>30fps is OK, given that they're constant</li>
+                </ul>
+            </section>
+            <section>
+                <h1>First implementation: 20 fps <span class="fragment" style="color:red">:(</span></h1>
+            </section>
+            <section>
+                <h2>By using chrome dev tools I discovered that: </h2>
+                <p>Every time a touch event was fired it was
+followed by a long chain of other event handler, taking up almost all the 16 ms time budget.</p>
+            <aside class="notes">these event handlers where reasonably fast by themselve, but they were fired as a very high rate.</aside>
+            </section>
+            <section>
+                <h2>By removing these handlers: 30 fps <br>With a standard deviation of 70ms <br><span class="fragment" style="color:#ffba00">:|</span></h2>
+            </section>
+            <section>
+                <h2>Exploiting hardware acceleration: </h2>
+                <p>I've used <code>translate3D</code> instead of <code>translate</code> to perform page transition. These way, the Render Layer is promoted to have its own Graphic Context, and 3D transformation are performed by the GPU</p>
+            </section>
+            <section>
+                <h2>Final result: 55 fps <br> 3.0ms standard deviation <br><span class="fragment" style="color:#48eb00">:)</span></h2>
+            </section>
+            <section>
+                <h1>Conclusions</h1>
+            </section>
+            <section>
+                <h2>The web is the platform of the <em>present</em></h2>
+                <ul>
+                    <li>Extreme flexibility</li>
+                    <li>Offline application support</li>
+                    <li>P2P browser communication</li>
+                    <li>Available everywhere</li>
+                    <li class="fragment">Even good for presentation slides</li>
+                </ul>
+            </section>
+            <section>
+                <h1>Many Thanks</h1>
+                <hr>
+                <h1>Q &amp; A</h1>
+            </section>
+        </div>
+
+    </div>
+    <script src="scripts/20cc1f38.vendor.js"></script>
+
+    <script src="scripts/76962dee.main.js"></script>
+</body>
+
+</html>
