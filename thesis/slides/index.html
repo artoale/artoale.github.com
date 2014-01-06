@@ -93,13 +93,14 @@
                 <h2>Advantages</h2>
                 <ul>
                     <li>Available in virtually every device</li>
-                    <li>Flexible programming model</li>
                     <li>Faster prototyping</li>
                     <li>Software update = page reload</li>
                     <li>"Open" platform</li>
+                    <li>Flexible yet robust programming model</li>
                 </ul>
                 <aside class="notes">
-                    available in every device made for the use of human being
+                    available in every device made for the use of human being <br>
+                    One of the reason (that makes the web flexible and robust), is that browsers are reactive system, based on an event loop.
                 </aside>
             </section>
             <section>
@@ -118,6 +119,7 @@
             <section>
                 <h1>HOW DOES A BROWSER WORK?</h1>
                 <aside class="notes">
+                 In order to better understand web programming, I'd like to explore in more details how browser work, in particular how a request is transformed into pixel on screen
                 </aside>
             </section>
             <section id="parsing">
@@ -147,6 +149,7 @@
                 <h2>The DOM</h2>
                 <div class="svg-body"></div>
                 <div class="fragment" data-fragment-id="start"></div>
+                <aside class="notes">Every web application use CSS to change the page visual appereance (which, eventually, can even add or remove content)</aside>
             </section>
             <section>
                 <h2>Adding style with CSS</h2>
@@ -261,6 +264,14 @@ nav > a:after {
                     <li>Drag &amp; Drop-based keypoints reordering</li>
                     <li>Keep global performance indicator and point weights consistent</li>
                 </ul>
+                <aside class="notes">
+                    Since the hightlight page size depends on the integrating platform, navigating between points may be slow.
+                </aside>
+            </section>
+            <section>
+                <h2>Highlight Page Manager</h2>
+                <h3>Overview</h3>
+                <img src="images/694b3537.manager.png" alt="">
             </section>
             <section>
                 <h2>Highlight Page Manager</h2>
@@ -281,11 +292,14 @@ nav > a:after {
                 <h2>Infographics</h2>
                 <h3>Key Aspects</h3>
                 <ul>
-                    <li>Responsiveness</li>
-                    <li>Authoring</li>
-                    <li>Customization</li>
-                    <li>Image Export</li>
+                    <li class="fragment">Responsiveness</li>
+                    <li class="fragment">Authoring</li>
+                    <li class="fragment">Customization</li>
+                    <li class="fragment">Image Export</li>
                 </ul>
+                <aside class="notes">
+                    For this project I took responsibility over the generated output, by exploring responsive design techniques and producing POC infographics to showcase the final product of the system we were building.
+                </aside>
             </section>
             <section>
                 <h2>Responsive Grid</h2>
@@ -305,9 +319,13 @@ nav > a:after {
                 <h2>The interaction model</h2>
                 ￼<ul>
                     <li>Narrate a story: page based model</li>
+                    <li>Each page is as big as the screen</li>
                     <li>Scroll/touch gestures trigger transition between pages</li>
                     <li>Problem: what if a page is bigger than the screen?</li>
                 </ul>
+                <aside class="notes">
+                    To better support the  idea of "telling a story" we decide to divide infographics into pages.
+                </aside>
             </section>
             <section>
                 <h2>Problems with touch events</h2>
@@ -383,7 +401,8 @@ followed by a long chain of other event handler, taking up almost all the 16 ms 
                 <p>I've used <code>translate3D</code> instead of <code>translate</code> to perform page transition. These way, the Render Layer is promoted to have its own Graphic Context, and 3D transformation are performed by the GPU</p>
             </section>
             <section>
-                <h2>Final result: 55 fps <br> 3.0ms standard deviation <br><span class="fragment" style="color:#48eb00">:)</span></h2>
+                <h2>Final result: 55 fps <br> 3.0ms standard deviation </h2>
+                <span><h1 class="fragment" style="color:#48eb00">:)</h1></span>
             </section>
             <section>
                 <h1>Conclusions</h1>
