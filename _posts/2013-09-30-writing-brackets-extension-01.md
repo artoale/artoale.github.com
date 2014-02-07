@@ -429,7 +429,7 @@ I suppose at this point you've get it but anyway, save everything, reload bracke
 Developers usually love their keyboard more than their mother, and since Brackets is developed for them, adding a keybinding to your commands is as easy as that:
 
 ```javascript
-helpMenu.addMenuItem(CORNIFY_CMD_ID, "Ctrl+Alt+U");
+helpMenu.addMenuItem(CORNIFY_CMD_ID, "Ctrl-Alt-U");
 ```
 
 This tell our editor to bind our command to the specified keystroke combination (and don't worry, `Ctrl` is replaced by `Cmd` automatically on Mac OS X).
